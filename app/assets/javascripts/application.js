@@ -19,6 +19,5 @@
 
 //you want to wait for the turbolinks to load.
 $(document).on('turbolinks:load', function () {
-   $('.ui.dropdown')
-  .dropdown(); 
+   $('.ui.dropdown').dropdown(); 
 })
