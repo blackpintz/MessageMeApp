@@ -12,9 +12,11 @@
 
   <body>
       <div class="ui small inverted menu">
-        <%= render 'layouts/navigation'%>
      </div>
     <div class= 'ui container'>
+        <%flash.each do |name, msg|%>
+          <%= msg%>
+        <% end %>
       <%= yield %>
     </div>
   </body>

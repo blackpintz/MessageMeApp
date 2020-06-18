@@ -1,0 +1,39 @@
+
+<div class="ui two column stackable grid">
+  <div class=" centered column">
+    <h2>Sign up</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+       <%= render "devise/shared/error_messages", resource: resource %>
+       <div class="ui form">
+         <div class="field">
+          <%= f.label :email%>
+          <div class="ui left icon input">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
+            <i class="user icon"></i>
+          </div>
+        </div>
+         <div class="field">
+          <%= f.label :password%>
+          <div class="ui left icon input">
+            <%= f.password_field :password, autocomplete: "new-password" %>
+            <i class="lock icon"></i>
+          </div>
+        </div>
+          <div class="field">
+          <%= f.label :password_confirmation%>
+          <div class="ui input">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+        </div>
+         <%= f.submit "Sign up", class: "ui brown fluid button" %>
+       </div>
+    <% end %>
+  </div>
+  <div class="two column row">
+    <div class = "centered column">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+
