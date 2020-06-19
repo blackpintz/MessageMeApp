@@ -5,6 +5,21 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
        <%= render "devise/shared/error_messages", resource: resource %>
        <div class="ui form">
+          <div class="two fields">
+          <div class="field">
+            <%= f.label :first_name %>
+            <div class="ui left icon input">
+              <%= f.text_field :first_name, autofocus: true, placeholder: "first name" %>
+              <i class="user icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <%= f.label :last_name %>
+            <div class="ui input">
+              <%= f.text_field :last_name, autofocus: true, placeholder: "last name" %>
+            </div>
+          </div>
+        </div>
          <div class="field">
           <%= f.label :email%>
           <div class="ui left icon input">
