@@ -12,6 +12,9 @@
 
   <body>
       <div class="ui small inverted menu">
+        <div class="right menu">
+           <%= link_to "Edit Profile", edit_user_registration_path, class: "item" %>
+        </div>
      </div>
     <div class= 'ui container'>
         <%flash.each do |name, msg|%>

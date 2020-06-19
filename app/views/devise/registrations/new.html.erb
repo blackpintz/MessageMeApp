@@ -18,6 +18,9 @@
             <%= f.password_field :password, autocomplete: "new-password" %>
             <i class="lock icon"></i>
           </div>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
         </div>
           <div class="field">
           <%= f.label :password_confirmation%>
