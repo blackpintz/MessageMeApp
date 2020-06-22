@@ -13,6 +13,11 @@
   <body>
       <div class="ui small inverted menu">
         <div class="right menu">
+          <% if user_signed_in? %>
+          <div class="item">
+            <%= current_user.full_name %>
+          </div>
+          <% end %>
            <%= link_to "Edit Profile", edit_user_registration_path, class: "item" %>
         </div>
      </div>

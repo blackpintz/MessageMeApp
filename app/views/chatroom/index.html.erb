@@ -8,45 +8,30 @@
         <div class="ui fluid raised card chatbox">
          <div class="content">
           <div class="ui feed">
+            <% @messages.each do |msg|%>
             <div class="event">
               <div class="content">
                <div class="summary">
-                 <em>Elliot Fu</em>: Test message.
+                 <em><%= msg.user.first_name %></em>: <%= msg.comment %>
               </div>
             </div>
           </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Stevie Feliciano</a> added <a>Elliot Fu</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Helen Troy</a> added <a>Christian Rocha</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Christian Rocha</a> signed up for the  site.
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
          </div>
          <div class="extra content">
+           <%= form_with scope: :message, url: messages_path, local: true do |f| %>
             <form class="ui reply form">
               <div class="field">
-                <div class="ui icon input">
-                    <input type="text" placeholder="Add comment">
-                    <i class="bordered inverted brown icon edit"></i>
+                <div class="ui fluid action input">
+                  <%= f.text_field :comment, autofocus: true, placeholder: "Add comment" %>
+                  <%= button_tag( type: "submit", class: "ui icon button") do%>
+                    <i class="inverted large brown icon edit"></i>
+                  <% end %>
                 </div>
               </div>
              </form>
+             <% end %>
           </div>
      </div>
     </div>
